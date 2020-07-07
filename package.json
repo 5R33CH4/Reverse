@@ -1,0 +1,68 @@
+{
+  "name": "Reverse",
+  "version": "1.1.0",
+  "description": "High Quality Youtube Videos Converter",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "release-linux": "electron-builder --linux",
+    "release-windows": "electron-builder --windows",
+    "release-mac": "electron-builder --mac"
+  },
+  "keywords": [
+    "Youtube",
+    "Downloader",
+    "Converter",
+    "High Quality",
+    "VII"
+  ],
+  "author": [
+    "Sreecharan <sreecharansiva@gmail.com>",
+    "5R33CH4 <5r33ch4@yahoo.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
+    "bootstrap": "^4.1.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "ytdl-core": "^0.20.4"
+  },
+  "devDependencies": {
+    "electron": "^2.0.7",
+    "electron-builder": "^19.56.2"
+  },
+  "build": {
+    "appId": "com.electron.vii",
+    "productName": "Reverse",
+    "files": [
+      "!dist",
+      "!release-builds"
+    ],
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "category": "Archiving",
+      "target": [
+        "AppImage"
+      ]
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg"
+      ]
+    }
+  }
+}
